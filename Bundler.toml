@@ -1,0 +1,6 @@
+format_version = 2
+
+[apps.Scerene]
+identifier = 'com.example.Scerene'
+product = 'Scerene'
+version = '0.1.0'
