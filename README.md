@@ -58,7 +58,7 @@ You will be using our custom-built CaretTextEditor (defined in `swift-cross-ui/A
 
 # OS-dependent backends (Mainly for building under Windows)
 
-The current imports for `AppKit` and `AppKitBackend` are MacOS-specific. In order to get the some portion of the code running for Windows, you will need to change lines in certain places to grab the right dependencies:
+The current imports for `AppKit` and `AppKitBackend` are MacOS-specific. In order to get some portion of the code running for Windows, you will need to change lines in certain places to grab the right dependencies:
 
   
 
