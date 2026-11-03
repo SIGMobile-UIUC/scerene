@@ -1,7 +1,7 @@
 
 # Scerene
 
-Scerene uses a forked copy of moreSwift/swift-cross-ui, which is located inside the toplevel folder. You will be able to build the project with either XCode or with swift-bundler in your terminal:
+Scerene uses a forked copy of `moreSwift/swift-cross-ui`, which is located inside the toplevel folder. You will be able to build the project with either XCode or with swift-bundler in your terminal:
 
 
 ```bash
@@ -20,9 +20,9 @@ swift-bundler run
 
   
 
-Since the UI components within the original library were very basic, we will build custom components under the framework.
+Since the UI components within the original library were very basic, we built custom components directly under the framework.
 
-For instance, we built a widget that incorporates a smooth cursor animation. If you comment out the entire entry point file in ScereneApp, and uncomment Example.Swift:
+For instance, we added a widget that incorporates a smooth cursor animation. To see a demo, comment out the entire entry point file in `ScereneApp.Swift`, and uncomment Example.Swift:
 
   
 
@@ -45,7 +45,7 @@ struct Example: App {
 
   
 
-Building the project will yield the base swift-cross-ui text editor on a black background. If you change the normal flag to false:
+Building the project will yield the base swift-cross-ui text editor on a black background. If you change the `normal` flag to false:
 
   
 
@@ -57,7 +57,7 @@ TextField(normal: false).background(Color.black)  // Make a not-normal text edit
 
   
 
-You will be using our custom-built CaretTextEditor (defined in swift-cross-ui/AppKitBackend/Helpers/CaretTextView). We plan to expand Scerene's feature set by adding custom widgets to the UI library over time.
+You will be using our custom-built CaretTextEditor (defined in `swift-cross-ui/AppKitBackend/Helpers/CaretTextView`). We plan to expand Scerene's feature set by adding custom widgets to the UI library over time.
 
   
 
@@ -65,7 +65,7 @@ You will be using our custom-built CaretTextEditor (defined in swift-cross-ui/Ap
 
 # OS-dependent backends (Mainly for building under Windows)
 
-The current imports for AppKit and AppKitBackend are MacOS-specific. In order to get the some portion of the code running for Windows, you will need to change lines in certain places to grab the right dependencies:
+The current imports for `AppKit` and `AppKitBackend` are MacOS-specific. In order to get the some portion of the code running for Windows, you will need to change lines in certain places to grab the right dependencies:
 
   
 
@@ -87,8 +87,8 @@ import AppKitBackend  // Change to WinUIBackend
 ```
   
 
-If you follow the instructions on swift-cross-ui's current [website](https://swiftcrossui.dev), they will suggest that you import DefaultBackend in the same places to get your app running across platforms. It seems that currently, the build process will not work on MacOS or Windows using this method. There are a couple reasons as to why:
+If you follow the instructions on swift-cross-ui's current [website](https://swiftcrossui.dev), they will suggest that you import `DefaultBackend` in the same places to get your app running across platforms. It seems that currently, the build process will not work on MacOS or Windows using this method. There are a couple reasons as to why:
 
-* DefaultBackend is outdated to older versions of both operating systems.
+* `DefaultBackend` is outdated to older versions of both operating systems.
 
-* Scerene uses custom-defined widgets that we implemented in AppKit, and haven't ported to WinUI yet.
+* Scerene uses custom-defined widgets that we implemented in `AppKit`, which are not ported to `WinUI` yet.
