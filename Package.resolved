@@ -1,5 +1,5 @@
 {
-  "originHash" : "2fbd294d89b12acfe6168266a19b6f7165708f9d662cc42d4b583899315d8cc2",
+  "originHash" : "096e6ca4a27ac92106b9a4bf528ff1a57113af007b34c5eddb42c3c888f884dc",
   "pins" : [
     {
       "identity" : "androidkit",
@@ -56,21 +56,21 @@
       }
     },
     {
+      "identity" : "swift-cmark",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftlang/swift-cmark.git",
+      "state" : {
+        "branch" : "gfm",
+        "revision" : "437611671145d47e6d9679761b8a5987766f4ae5"
+      }
+    },
+    {
       "identity" : "swift-collections",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-collections",
       "state" : {
-        "revision" : "844289ac455816e193f1dbbe014f3c4dbe429410",
-        "version" : "1.7.4"
-      }
-    },
-    {
-      "identity" : "swift-cross-ui",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/moreSwift/swift-cross-ui",
-      "state" : {
-        "revision" : "355284163826c717e6754de0d9fe2677bd001d18",
-        "version" : "0.7.0"
+        "revision" : "f96b909e1a9e469620bc5037c1e24e00153f376f",
+        "version" : "1.7.5"
       }
     },
     {
@@ -80,6 +80,15 @@
       "state" : {
         "revision" : "d735e0ed3d4a4aed50f4042494e7c769b5b70229",
         "version" : "0.5.0"
+      }
+    },
+    {
+      "identity" : "swift-issue-reporting",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/swift-issue-reporting",
+      "state" : {
+        "revision" : "b23bb4493c439d3e05152bc167014235ba3d47fc",
+        "version" : "2.1.2"
       }
     },
     {
@@ -119,12 +128,30 @@
       }
     },
     {
+      "identity" : "swift-markdown",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftlang/swift-markdown.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "ea1d88be47afe8a731b3971d7b3fb7a3a6db1a5a"
+      }
+    },
+    {
       "identity" : "swift-mutex",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/swhitty/swift-mutex",
       "state" : {
         "revision" : "1770152df756b54c28ef1787df1e957d93cc62d5",
         "version" : "0.0.6"
+      }
+    },
+    {
+      "identity" : "swift-observation-polyfill",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/moreSwift/swift-observation-polyfill",
+      "state" : {
+        "revision" : "d8843fa6dbf970aab42faaf101c9ce1cfd16fb94",
+        "version" : "0.1.1"
       }
     },
     {
@@ -179,6 +206,15 @@
       "state" : {
         "revision" : "ad30daacb7e4666e1a56bfdd48498f5ac4ff081d",
         "version" : "0.3.0"
+      }
+    },
+    {
+      "identity" : "xctest-dynamic-overlay",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/xctest-dynamic-overlay",
+      "state" : {
+        "revision" : "d9308ad679143c26a30dec52daefe82f54af2b82",
+        "version" : "1.13.1"
       }
     },
     {
