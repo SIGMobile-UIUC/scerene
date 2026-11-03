@@ -5,15 +5,10 @@ Scerene uses a forked copy of `moreSwift/swift-cross-ui`, which is located insid
 
 
 ```bash
-
 brew install mint
-
 mint install stackotter/swift-bundler@main
-
 ...cd to the directory of Scerene/Package.swift...
-
 swift-bundler run
-
 ```
 
   
@@ -22,7 +17,7 @@ swift-bundler run
 
 Since the UI components within the original library were very basic, we built custom components directly under the framework.
 
-For instance, we added a widget that incorporates a smooth cursor animation. To see a demo, comment out the entire entry point file in `ScereneApp.Swift`, and uncomment Example.Swift:
+For instance, we added a widget that incorporates a smooth cursor animation. To see a demo, comment out the entire entry point file in `ScereneApp.Swift`, and uncomment `Example.Swift`:
 
   
 
@@ -45,7 +40,7 @@ struct Example: App {
 
   
 
-Building the project will yield the base swift-cross-ui text editor on a black background. If you change the `normal` flag to false:
+Building the project will yield the base swift-cross-ui text editor on a black background. If you change the `normal` flag to `false`:
 
   
 
@@ -82,7 +77,7 @@ The current imports for `AppKit` and `AppKitBackend` are MacOS-specific. In orde
 **ScereneApp/ContentView/etc.Swift**
 
 ```swift
-import AppKit // Delete this line
+import AppKit         // Delete this line
 import AppKitBackend  // Change to WinUIBackend
 ```
   
