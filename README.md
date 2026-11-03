@@ -15,9 +15,9 @@ swift-bundler run
 
   
 
-Since the UI components within the original library were very basic, we built custom components directly under the framework.
+Since the UI components within the original library were very basic, we built custom components directly under the framework. For instance, we added a widget that incorporates a smooth cursor animation.
 
-For instance, we added a widget that incorporates a smooth cursor animation. To see a demo, comment out the entire entry point file in `ScereneApp.Swift`, and uncomment `Example.Swift`:
+To see a demo, comment out the entire entry point file in `ScereneApp.Swift`, and uncomment `Example.Swift`:
 
   
 
@@ -56,7 +56,7 @@ You will be using our custom-built CaretTextEditor (defined in `swift-cross-ui/A
 
   
 
-  
+&nbsp;
 
 # OS-dependent backends (Mainly for building under Windows)
 
