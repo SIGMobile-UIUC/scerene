@@ -22,47 +22,30 @@ swift-bundler run
 
 Since the UI components within the original library were very basic, we will build custom components under the framework.
 
-For instance, we built a widget that incorporates a smooth cursor animation.
-
-If you comment out the entire entry point file in ScereneApp, and uncomment Example.Swift:
+For instance, we built a widget that incorporates a smooth cursor animation. If you comment out the entire entry point file in ScereneApp, and uncomment Example.Swift:
 
   
 
 **Example.swift**
 
 ```swift
-
 import AppKit
-
 import SwiftCrossUI
-
 import AppKitBackend
 
-  
-
 @main
-
 struct Example: App {
-
-var body: some Scene {
-
-WindowGroup("Window Title") {
-
-TextField(normal: true).background(Color.black)  // Note the "normal" flag
-
+    var body: some Scene {
+        WindowGroup("Window Title") {
+            TextField(normal: true).background(Color.black)  // Note the "normal" flag
+        }
+    }
 }
-
-}
-
-}
-
 ```
 
   
 
-Building the project will yield the base swift-cross-ui text editor on a black background.
-
-If you change the normal flag to false:
+Building the project will yield the base swift-cross-ui text editor on a black background. If you change the normal flag to false:
 
   
 
@@ -74,9 +57,7 @@ TextField(normal: false).background(Color.black)  // Make a not-normal text edit
 
   
 
-You will be using our custom-built CaretTextEditor (defined in swift-cross-ui/AppKitBackend/Helpers/CaretTextView).
-
-We plan to expand Scerene's feature set by adding custom widgets to the UI library over time.
+You will be using our custom-built CaretTextEditor (defined in swift-cross-ui/AppKitBackend/Helpers/CaretTextView). We plan to expand Scerene's feature set by adding custom widgets to the UI library over time.
 
   
 
@@ -93,9 +74,7 @@ The current imports for AppKit and AppKitBackend are MacOS-specific. In order to
 **Package.Swift**
 
 ```swift
-
 .product(name: "AppKitBackend", package: "swift-cross-ui"),  // Change AppKitBackend to WinUIBackend
-
 ```
 
   
@@ -103,18 +82,12 @@ The current imports for AppKit and AppKitBackend are MacOS-specific. In order to
 **ScereneApp/ContentView/etc.Swift**
 
 ```swift
-
 import AppKit // Delete this line
-
 import AppKitBackend  // Change to WinUIBackend
-
 ```
-
   
 
 If you follow the instructions on swift-cross-ui's current [website](https://swiftcrossui.dev), they will suggest that you import DefaultBackend in the same places to get your app running across platforms. It seems that currently, the build process will not work on MacOS or Windows using this method. There are a couple reasons as to why:
-
-  
 
 * DefaultBackend is outdated to older versions of both operating systems.
 
