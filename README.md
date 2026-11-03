@@ -1,7 +1,7 @@
 
 # Scerene
 
-Scerene uses a forked copy of `moreSwift/swift-cross-ui`, which is located inside the toplevel folder. You will be able to build the project with either XCode or with swift-bundler in your terminal:
+Scerene uses a forked copy of `moreSwift/swift-cross-ui`, which is located inside the toplevel folder. You will be able to build the project with either XCode or with `swift-bundler` in your terminal:
 
 
 ```bash
@@ -40,7 +40,7 @@ struct Example: App {
 
   
 
-Building the project will yield the base swift-cross-ui text editor on a black background. If you change the `normal` flag to `false`:
+Building the project will yield the base `swift-cross-ui` text editor on a black background. If you change the `normal` flag to `false`:
 
   
 
@@ -82,7 +82,7 @@ import AppKitBackend  // Change to WinUIBackend
 ```
   
 
-If you follow the instructions on swift-cross-ui's current [website](https://swiftcrossui.dev), they will suggest that you import `DefaultBackend` in the same places to get your app running across platforms. It seems that currently, the build process will not work on MacOS or Windows using this method. There are a couple reasons as to why:
+If you follow the instructions on `swift-cross-ui`'s current [website](https://swiftcrossui.dev), they will suggest that you import `DefaultBackend` in the same places to get your app running across platforms. It seems that currently, the build process will not work on MacOS or Windows using this method. There are a couple reasons as to why:
 
 * `DefaultBackend` is outdated to older versions of both operating systems.
 
