@@ -45,9 +45,7 @@ Building the project will yield the base `swift-cross-ui` text editor on a black
   
 
 ```
-
 TextField(normal: false).background(Color.black)  // Make a not-normal text editor!
-
 ```
 
   
