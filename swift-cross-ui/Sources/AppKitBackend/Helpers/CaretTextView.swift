@@ -22,6 +22,7 @@ public class CaretTextView: NSObservableTextView {
         textEditListeners.append(listener)
     }
     
+    
     // Calls every hook that is registered
     public override func didChangeText() {
         super.didChangeText()

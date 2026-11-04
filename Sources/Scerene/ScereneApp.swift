@@ -2,9 +2,9 @@ import AppKit
 import SwiftCrossUI
 import AppKitBackend
 
+
 @main
 struct ScereneApp: App {
-    @State var textInput: String = ""
     var body: some Scene {
         WindowGroup("Scerene") {
             VStack {

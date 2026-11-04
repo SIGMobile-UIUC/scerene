@@ -4,7 +4,6 @@ import AppKit
 extension AppKitBackend: BackendFeatures.TextEditors {
 
     public static var useCaretEditor: Bool = false
-    
     public func createTextEditor() -> Widget {
         let textEditor: NSTextView
         if (Self.useCaretEditor) {
@@ -12,7 +11,7 @@ extension AppKitBackend: BackendFeatures.TextEditors {
         } else {
             textEditor = NSObservableTextView()
         }
-        
+
         textEditor.drawsBackground = false
         textEditor.delegate = textEditor as? any NSTextViewDelegate
         textEditor.allowsUndo = true
@@ -31,16 +30,28 @@ extension AppKitBackend: BackendFeatures.TextEditors {
         textEditor.onEdit = { textView in
             onChange(self.getContent(ofTextEditor: textView))
         }
-        let resolvedFont = environment.resolvedFont
-        if textEditor.font != Self.font(for: resolvedFont) {
-            textEditor.font = Self.font(for: resolvedFont)
+        
+        // appliedFont is a note we keep to ourselves of the
+        // most recently used font. We only change the textEditor's .font
+        // attribute if there is different resolved font.
+        let resolvedFont = Self.font(for: environment.resolvedFont)
+        if textEditor.appliedFont != resolvedFont {
+            textEditor.appliedFont = resolvedFont
+            textEditor.font = resolvedFont
         }
+        
         textEditor.appearance = environment.colorScheme.nsAppearance
         textEditor.isEditable = environment.isEnabled
+
+        // Since we are using a black background right now, keep this
+        // here temporarily. However, we may want to make this pickable later.
+        let color = NSColor.white
+        if textEditor.appliedColor != color {
+            textEditor.appliedColor = color
+            textEditor.textColor = color
+        }
         
-        // Changing the color of the font
-        textEditor.textColor = NSColor.white // Or .systemRed, .gray, or a custom NSColor
-        textEditor.typingAttributes[.foregroundColor] = NSColor.white
+        
 
         if #available(macOS 14, *) {
             textEditor.contentType =
@@ -60,7 +71,10 @@ extension AppKitBackend: BackendFeatures.TextEditors {
     }
 
     public func setContent(ofTextEditor textEditor: Widget, to content: String) {
-        (textEditor as! NSTextView).string = content
+        let textView = textEditor as! NSTextView
+        if textView.string != content {     // Only change the string if the content is new,
+            textView.string = content       // Not if setContent was called from a font change or something
+        }
     }
 
     public func getContent(ofTextEditor textEditor: Widget) -> String {
