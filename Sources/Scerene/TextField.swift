@@ -10,9 +10,6 @@ import SwiftCrossUI
 import AppKitBackend
 import Markdown
 
-// I wanna make the cursor flash a certain color, but nothing
-// is exposed for me to change that. I guess I'll have to change
-// the internals.
 
 
 struct HeadingRangeCollector: MarkupWalker {
@@ -21,8 +18,17 @@ struct HeadingRangeCollector: MarkupWalker {
     // Automatically called by the walker whenever a heading node is encountered
     mutating func visitHeading(_ heading: Heading) {
         let headingText = heading.format().trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        // I need to check whether the # is next to a space or not. If not, have the heading level at 0
+        // That's just checking the character at string[heading.level + 1]
+                
+        var level = 0
+        if headingText[index: heading.level] == " " {       // Only change the heading level
+            level = heading.level                           // if we have a space between our hashtag and other stuff
+        }
+        
         rangeDetails.append((
-            level: heading.level,       // The number of hashtags
+            level: level,               // The number of hashtags
             text: headingText,          // The actual text, may do post-processing on this
             range: heading.range        // The range within the string. 1:1..<1:10, for example, denotes
                                         // the first ten characters of the first line
@@ -83,9 +89,6 @@ struct TextField: View {
     // TODO: Add post-processing on the text here after
     // since the text editor does not get rid of the hashtags
     
-    // Also, check special case where the text is next to the hashtag,
-    // such as #123 instead of # 123. The font should remain at default
-    // for the hashtag in that case, I believe.
     public func updateHeadingFont(textView: NSTextView) {
         let gottenString = textView.string                  // Grab the text
         let document = Document(parsing: gottenString)      // Parse it with Markdown.Document
