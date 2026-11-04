@@ -16,7 +16,7 @@ extension AppKitBackend: BackendFeatures.TextEditors {
         textEditor.delegate = textEditor as? any NSTextViewDelegate
         textEditor.allowsUndo = true
         textEditor.isRichText = false
-        textEditor.textContainerInset = .zero
+        textEditor.textContainerInset = NSSize(width: 80, height: 80)       // Start the editor with an indent relative to the window
         textEditor.textContainer?.lineFragmentPadding = 0
         return textEditor
     }
