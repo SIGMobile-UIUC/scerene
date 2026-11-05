@@ -10,7 +10,7 @@ mint install stackotter/swift-bundler@main
 ...cd to the directory of Scerene/Package.swift...
 swift-bundler run
 ```
-
+If your version of Swift does not support swift-bundler, getting the latest version of XCode is recommended, as their installation process updates your version of Swift automatically.
 Since the UI components within the original library were very basic, we built custom components directly under the framework. For instance, we added a widget that incorporates a smooth cursor animation. We plan to expand Scerene's feature set by adding custom widgets to the UI library over time.
 
 To see a demo, comment out the entire entry point file in `ScereneApp.Swift`, and uncomment `Example.Swift`:

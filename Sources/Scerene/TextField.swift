@@ -116,7 +116,6 @@ struct TextField: View {
               let end = offset(for: sourceRange.upperBound) else {
             return nil
         }
-        
         return NSRange(location: start, length: max(0, end - start))
     }
     
