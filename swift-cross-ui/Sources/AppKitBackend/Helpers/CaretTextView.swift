@@ -34,7 +34,7 @@ public class CaretTextView: NSObservableTextView {
 
     
     /// Color of the custom caret.
-    public var caretColor: NSColor = .systemCyan {
+    public var caretColor: NSColor = .systemRed {
         didSet {
             caret.layer?.backgroundColor = caretColor.cgColor
             insertionPointColor = caretColor

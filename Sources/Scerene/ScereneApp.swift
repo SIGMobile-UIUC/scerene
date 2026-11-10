@@ -14,6 +14,11 @@ struct ScereneApp: App {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.themeBackground);
         }
+
+        WindowGroup("Component Explorer") {
+            ComponentExplorer()
+        }
+        .defaultSize(width: 900, height: 700)
     }
 }
 
