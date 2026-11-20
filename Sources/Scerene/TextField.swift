@@ -73,9 +73,10 @@ struct HeadingRangeCollector: MarkupWalker {
 
 
 struct TextField: View {
-    @State var textInput: String = ""
+    @Binding var textInput: String
     
-    init(normal: Bool) {
+    init(normal: Bool, text: Binding<String>) {
+        self._textInput = text
         if (!normal) {
             AppKitBackend.useCaretEditor = true
         }

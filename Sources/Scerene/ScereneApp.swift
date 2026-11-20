@@ -8,7 +8,7 @@ struct ScereneApp: App {
     var body: some Scene {
         WindowGroup("Scerene") {
             VStack {
-                TextField(normal: false).background(Color.black)
+                TabbedEditor()
                 //ContentView()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
